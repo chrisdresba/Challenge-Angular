@@ -1,0 +1,26 @@
+<div id="container">
+	<div class="d-flex justify-content-center loading" role="status" [hidden]="!loading">
+        <img id="spinner" [hidden]="!loading" src="../../assets/img/loading.gif" alt="Loading" />
+    </div>
+	<div class="main" [hidden]="loading">
+		<input type="checkbox" id="chk" aria-hidden="true">
+		<div class="login">
+			<form [formGroup]="formularioLogin">
+				<img id="logo" src="../../assets/img/logo.png" alt="A LA CARTA" />
+				<label for="chk" aria-hidden="true" class="title">Iniciar Sesión</label>
+				<input type="email" class="form-control" formControlName="email" name="email" placeholder="Email" required="">
+                <span *ngIf="this.formularioLogin.get('email')?.hasError('email')"
+                class="text-error">
+                Debe ingresar un mail valido</span>
+				<input type="password" class="form-control" name="contraseña" formControlName="contraseña" placeholder="Contraseña" required="">
+                <span *ngIf="this.formularioLogin.get('contraseña')?.hasError('minlength')"
+                class="text-error">
+                Ingrese un minimo de 5 caracteres</span>
+				<button (click)="ingresar()">Ingresar</button>
+				<div class="row">
+					<button class="btnAccesoRapido" (click)="ingresarInvitado()">Acceso Rapido</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<div id="container">
+  <div class="p-5 box">
+    <div class="container-fluid row ">
+      <div class="col-12">
+        <button (click)="cerrar()" class="btn-cerrar">X</button>
+        <img src="{{platoSeleccionado.image}}" alt="">
+        <h1 class="display-4 fw-bold lh-1">{{platoSeleccionado.title}}</h1>
+        <p class="lead">Características del Plato</p>
+        <p>Precio: {{platoSeleccionado.price}}</p>
+        <p>Tiempo de preparación: {{platoSeleccionado.readyInMinutes}}</p>
+        <p>Health Score: {{platoSeleccionado.healthScore}}</p>
+        <p>Vegano: {{platoSeleccionado.vegan | siNo}}</p>
+      </div>
+    </div>
+  </div>
+</div>

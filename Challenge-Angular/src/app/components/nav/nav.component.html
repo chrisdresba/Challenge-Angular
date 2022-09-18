@@ -1,0 +1,33 @@
+<nav class="navbar fixed-top" id="menu">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <img src="assets/img/menu.png" alt="">
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h6 class="offcanvas-title" [hidden]="!auth" id="offcanvasNavbarLabel">{{usuarioLogin}}</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto" id="navbar">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" data-bs-dismiss="offcanvas">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/platos" data-bs-dismiss="offcanvas">Buscar Platos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="navbar-brand text-flicker-in-glow" routerLink="/home">A LA CARTA</a>
+        <form class="d-flex">
+            <input [hidden]="auth" type="button" id="btnLogin" (click)="redirigirLogin()"
+            class="btn btn-outline-dark" value="Ingresar">
+             <input [hidden]="!auth" type="button" id="btnLogin" (click)="cerrarSesion()"
+             class="btn btn-outline-dark" value="Cerrar sesión">
+        </form>
+    </div>
+</nav>
+
+

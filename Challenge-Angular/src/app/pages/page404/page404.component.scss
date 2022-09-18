@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+}
+
+img {
+    width: 45vw;
+    margin-top: 3em;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 470px) {
+   img {
+      width: 90vw;
+    }
+}

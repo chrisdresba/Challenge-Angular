@@ -1,0 +1,13 @@
+<div id="barra" class="row">
+    <h1>ARMEMOS TU MENÚ</h1>
+    <form [formGroup]="formSearch" >
+        <input type="text" class="form-control" name="listadoPlatos" placeholder="Buscar..." formControlName="name"
+            (keyup)="search()">
+        <span *ngIf="this.formSearch.get('name')?.hasError('minlength')" class="text-error">
+            Ingrese un minimo de 3 caracteres</span>
+        <button id="btnBuscar" (click)="search()" class="btn btn-dark">Buscar</button>
+    </form>
+    <div class="d-flex justify-content-center loading" role="status" [hidden]="!loading">
+        <img id="spinner" [hidden]="!loading" src="../../assets/img/loading2.gif" alt="Loading" />
+    </div>
+</div>

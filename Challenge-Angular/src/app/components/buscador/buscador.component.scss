@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+#barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5em;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 70vw;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+
+}
+
+button {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+}
+
+span {
+    position: absolute;
+    margin-top: 4em;
+    color: rgb(233, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(66, 66, 66, 0.5);
+
+}
+
+h1 {
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: bold;
+    -webkit-text-stroke: 0.3px rgb(10, 5, 5);
+    color: #eef2f3;
+}
+
+#spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    width: 150px;
+    height: 150px;
+}

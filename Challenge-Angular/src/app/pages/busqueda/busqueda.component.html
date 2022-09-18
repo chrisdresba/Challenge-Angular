@@ -1,0 +1,7 @@
+<div id="container" class="row">
+    <header class="pb-3 mb-4">
+   <app-buscador (listadoPlatos)="obtenerListado($event)"></app-buscador>
+      </header>
+   <app-listado-platos [arrayPlatos]="arrayPlatos"> </app-listado-platos>
+   <button routerLink="/home" class="btn-flotante">Mi Menú</button>
+</div>

@@ -1,0 +1,97 @@
+* {
+    box-sizing: content-box;
+    // font-family: 'Poppins', sans-serif;
+    font-family: 'Bangers', cursive;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Monoton&display=swap');
+  
+  #menu {
+    background: linear-gradient(to top, #000, #267f8d);
+  }
+  
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  a {
+    color: #fff !important;
+    font-size: 1.5em;
+  }
+  
+  h6 {
+    color: #fff !important;
+  }
+  
+  #btnLogin,
+  #btnSesion {
+    color: #fff;
+    font-weight: 600;
+    border: none !important;
+    position: absolute;
+    padding: 8px;
+    width: 110px;
+    left: 100%;
+    transform: translatex(-100%);
+    margin-top: -1.3em;
+    margin-left: -0.2em;
+  }
+  
+  #usuarioLogueado {
+    position: absolute;
+    display: flex;
+    color: #fff !important;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 9rem;
+  }
+  
+  
+  
+  #navbar {
+    position: absolute;
+    left: 35%;
+    transform: translatex(-50%);
+  }
+  
+  #offcanvasNavbar {
+    background: linear-gradient(to right, #18222b, #4ca1af);
+    max-width: 280px;
+  }
+  
+  .navbar-brand {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media only screen and (min-width: 260px) and (max-width: 720px) {
+  
+    #btnLogin,
+    #btnSesion {
+      width: 70px;
+      font-size: 12px;
+    }
+  
+    a {
+      color: #fff !important;
+      font-size: 1em;
+    }
+  
+    .navbar-brand {
+      margin-left: -20vw;
+  
+    }
+  
+    #offcanvasNavbar {
+      background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+      min-height: 100vh;
+      overflow-y: scroll;
+    }
+  
+  }
+  
+  

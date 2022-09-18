@@ -1,0 +1,25 @@
+<div class="mb-4 bg-light rounded-3">
+    <div class="container-fluid row fade-in-bck">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1">{{plato.title}}</h1>
+            <p class="lead">Características del Plato</p>
+            <ul>
+                <li>Precio: ${{plato.price}}</li>
+                <li>Tiempo de preparación: {{plato.readyInMinutes}} min</li>
+                <li>Health Score: {{plato.healthScore}}</li>
+                <li>Vegano: {{plato.vegan | siNo}}</li>
+            </ul>
+            <div *ngIf="menu" class="d-grid botones gap-2 d-md-flex justify-content-md-center mb-4 mb-lg-3">
+                <button type="button" (click)="detail(plato)" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Detalles</button>
+                <button type="button" (click)="deleteDish(plato)" class="btn btn-outline-danger btn-lg px-4">Eliminar</button>
+            </div>
+            <div *ngIf="!menu" class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <button type="button" (click)="addDish(plato)" class="btn btn-success btn-lg px-4 me-md-2 fw-bold">Agregar</button>
+            </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
+            <img class="rounded-lg-3" src="{{plato.image}}" alt="" width="500" height="330">
+        </div>
+    </div>
+  </div>
+
