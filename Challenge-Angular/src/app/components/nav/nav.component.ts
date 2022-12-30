@@ -11,6 +11,7 @@ export class NavComponent implements OnInit {
 
   usuarioLogin: any;
   estado: any;
+  btnMain: string = "";
   public tituloBtn: string = '';
   public auth: boolean = false;
   public sesion: boolean = false;
@@ -38,7 +39,14 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('sesionUsuario');
     this.api.sesionDesc();
     this.auth = false;
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
+  }
+
+  async rotate(){
+    this.btnMain = 'rotate';
+    setTimeout(()=>{
+      this.btnMain = '';
+    },2000);
   }
 
 }

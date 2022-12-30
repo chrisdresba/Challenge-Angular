@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "alacarta-angular"
-  }
+    "default": "alacarta-angular",
+    "A la carta": "alacarta-angular"
+  },
+  "targets": {},
+  "etags": {}
 }

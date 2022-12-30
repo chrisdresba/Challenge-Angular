@@ -9,17 +9,17 @@
     </div>
   </div>
 
-  <div class="row message" id="barraMenu">
+  <div class="row g-0 message" id="barraMenu">
     <h2>Menú</h2>
     <div class="valores col">
-      <p>Health Score:{{menuServ.promedioHealthScore | number:'1.1-2'}}</p>
-      <p>Tiempo de preparación: {{menuServ.promedioTiempo | number:'1.1-2'}} min </p>
-      <p>Precio Total: ${{menuServ.precioTotal | number:'1.1-2'}}</p>
+      <p class="item-barra">Health Score:{{menuServ.promedioHealthScore | number:'1.1-2'}}</p>
+      <p class="item-barra">Tiempo de preparación: {{menuServ.promedioTiempo | number:'1.1-2'}} min </p>
+      <p class="item-barra">Precio Total: ${{menuServ.precioTotal | number:'1.1-2'}}</p>
     </div>
   </div>
 
-  <div class="d-md-flex row flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="row" *ngFor="let plato of menu">
+  <div class="d-md-flex row g-0 flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="row " *ngFor="let plato of menu">
       <app-item-plato class="item" [plato]="plato" [menu]="true" (detailPlato)="obtenerPlato($event)"></app-item-plato>
     </div>
   </div>

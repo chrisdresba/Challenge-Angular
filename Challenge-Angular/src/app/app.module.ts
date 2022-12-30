@@ -14,6 +14,9 @@ import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { SiNoPipe } from './pipes/si-no.pipe';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { SiNoPipe } from './pipes/si-no.pipe';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

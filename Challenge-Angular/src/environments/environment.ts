@@ -16,7 +16,12 @@ export const environment = {
   production: false,
   urlAuth: 'http://challenge-react.alkemy.org/',
   urlFood: 'https://api.spoonacular.com/recipes/',
-  keyApi: 'a3c96007183c4f1e9e5a8d5853d79e9c',
+  keyApi: '9fa6fc05c627466f877f456e296c938d',
+  firebase:{
+/*key FIREBASE*/
+  
+  }
+  
 };
 
 /*

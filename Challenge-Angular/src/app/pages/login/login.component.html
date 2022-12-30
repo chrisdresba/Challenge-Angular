@@ -5,22 +5,50 @@
 	<div class="main" [hidden]="loading">
 		<input type="checkbox" id="chk" aria-hidden="true">
 		<div class="login">
-			<form [formGroup]="formularioLogin">
+			<form [formGroup]="formularioLogin" [hidden]="view">
 				<img id="logo" src="../../assets/img/logo.png" alt="A LA CARTA" />
 				<label for="chk" aria-hidden="true" class="title">Iniciar Sesión</label>
 				<input type="email" class="form-control" formControlName="email" name="email" placeholder="Email" required="">
                 <span *ngIf="this.formularioLogin.get('email')?.hasError('email')"
                 class="text-error">
-                Debe ingresar un mail valido</span>
+                Debe ingresar un mail válido</span>
 				<input type="password" class="form-control" name="contraseña" formControlName="contraseña" placeholder="Contraseña" required="">
                 <span *ngIf="this.formularioLogin.get('contraseña')?.hasError('minlength')"
                 class="text-error">
-                Ingrese un minimo de 5 caracteres</span>
-				<button (click)="ingresar()">Ingresar</button>
+                Ingrese un mínimo de 6 caracteres</span>
+				<button [disabled]="!formularioLogin.valid" (click)="ingresar()">Ingresar</button>
 				<div class="row">
-					<button class="btnAccesoRapido" (click)="ingresarInvitado()">Acceso Rapido</button>
+					<button class="btnAccesoRapido" (click)="ingresarInvitado()">Acceso Rápido</button>
 				</div>
+				<p>¿No tienes una cuenta? <a (click)="viewForm(true)">Regístrate</a></p>
+			</form>
+
+			<!--registro-->
+			<form [formGroup]="formularioRegistro" [hidden]="!view">
+				<img id="btnCerrar" src="../../assets/img/atras.png" (click)="viewForm(false)" />
+				<img id="logo" src="../../assets/img/logo.png" alt="A LA CARTA" />
+				<label for="chk" aria-hidden="true" class="title">Registrarse</label>
+				<input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Nombre" required="">
+                <span *ngIf="this.formularioRegistro.get('nombre')?.hasError('maxlength')"
+                class="text-error">
+                Ingrese un máximo de 20 caracteres</span>
+				<input type="email" class="form-control" formControlName="email" name="email" placeholder="Email" required="">
+                <span *ngIf="this.formularioRegistro.get('email')?.hasError('email')"
+                class="text-error">
+                Debe ingresar un mail válido</span>
+				<input type="password" class="form-control" name="contraseña" formControlName="contraseña" placeholder="Contraseña" required="">
+                <span *ngIf="this.formularioRegistro.get('contraseña')?.hasError('minlength')"
+                class="text-error">
+                Ingrese un mínimo de 6 caracteres</span>
+				<input type="password" class="form-control" name="contraseñaRev" formControlName="contraseñaRev" placeholder="Reingresar contraseña" required="">
+                <span *ngIf="this.formularioRegistro.get('contraseñaRev')?.hasError('minlength')"
+                class="text-error">
+                Ingrese un mínimo de 6 caracteres</span>
+				<button (click)="registrar()" id="btn-Register" [disabled]="!formularioRegistro.valid">Registrarse</button>
 			</form>
 		</div>
+	</div>
+	<div>
+		<!--dfdf-->
 	</div>
 </div>

@@ -1,56 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
-    font-family: 'Poppins', sans-serif;
-}
-#container {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
-img{
-    margin-top: 10px;
-    border-radius: 10px;
+.item {
+  margin: 20px;
+  background-color: #f9f9f9f2;
+}
+
+#container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}
+
+img {
+  border-radius: 10px;
+  width: 450px;
+}
+
+.boxImg {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+ul{
+  padding-left: 0px !important;
 }
 
 li {
-    list-style-type: none
+  list-style-type: none
 }
 
-.botones{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 80%;
 }
 
 .fade-in-bck {
-	-webkit-animation: fade-in-bck 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in-bck 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bck 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bck 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
- @-webkit-keyframes fade-in-bck {
-    0% {
-      -webkit-transform: translateZ(80px);
-              transform: translateZ(80px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
+@-webkit-keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
   }
-  @keyframes fade-in-bck {
-    0% {
-      -webkit-transform: translateZ(80px);
-              transform: translateZ(80px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
   }
-  
+}
+
+@keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .boxImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .item {
+    margin: 5px;
+  }
+
+  button {
+    width: 40vw;
+  }
+
+}
+
+@media only screen and (min-width: 268px) and (max-width: 580px) {
+  img {
+    width: 80%;
+  }
+
+
+  ul,
+  li {
+    padding-left: 0 !important;
+    font-size: 14px;
+  }
+
+  button {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+}
