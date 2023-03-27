@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { SesionService } from 'src/app/services/sesion.service';
 
 @Component({
   selector: 'app-nav',
@@ -13,20 +14,20 @@ export class NavComponent implements OnInit {
   estado: any;
   btnMain: string = "";
   public tituloBtn: string = '';
-  public auth: boolean = false;
+  public auth = this.service.isSesion;
   public sesion: boolean = false;
 
-  constructor(public router: Router,public api: ApiService) { }
+  constructor(public router: Router,public api: ApiService, public service: SesionService) { 
+    this.auth = this.service.isSesion;
+  }
 
   ngOnInit(): void {
     if (localStorage.getItem('tokenAlkemy')) {
       this.usuarioLogin = localStorage.getItem('sesionUsuario');
       this.sesion = true;
-    }
-    if (!this.sesion) {
-      this.auth = false;
-    } else {
-      this.auth = true;
+      this.service.show();
+    }else{
+      this.service.hide();
     }
   }
 
@@ -38,7 +39,7 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('tokenAlkemy');
     localStorage.removeItem('sesionUsuario');
     this.api.sesionDesc();
-    this.auth = false;
+    this.service.hide();
     this.router.navigate(['/login']);
   }
 

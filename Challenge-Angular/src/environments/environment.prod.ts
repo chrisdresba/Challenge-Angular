@@ -4,7 +4,8 @@ export const environment = {
   urlFood: 'https://api.spoonacular.com/recipes/',
   keyApi: '9fa6fc05c627466f877f456e296c938d',
   firebase:{
-/*key FIREBASE*/
-  }
+    /*key FIREBASE*/
+      
+      }
   
 };

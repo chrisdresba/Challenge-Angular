@@ -21,7 +21,10 @@
 }
 
 #banner {
-        background: url("../../../assets/img/banner.jpg") no-repeat center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
         overflow: hidden;
         margin: 0;
         padding: 0;
@@ -30,8 +33,6 @@
         align-items: center;
         min-height: 100vh;
         color: #eef2f3;
-        background-attachment: fixed;
-        background-size: cover;
 }
 
 .message {

@@ -13,11 +13,12 @@ import {
 import Swal from 'sweetalert2';
 import { ApiService } from 'src/app/services/api.service';
 import { environment } from 'src/environments/environment';
+import { SesionService } from 'src/app/services/sesion.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   formularioLogin: FormGroup;
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   public loading: boolean = true;
   public view: boolean = false;
 
-  constructor(public router: Router, public fb: FormBuilder, private api: ApiService,public afAuth: AngularFireAuth) {
+  constructor(public router: Router, public fb: FormBuilder, private api: ApiService,public afAuth: AngularFireAuth,public service:SesionService) {
     this.formularioLogin = this.fb.group({
       'email': ['', [Validators.required, Validators.email]],
       'contraseña': ['', [Validators.required, Validators.minLength(6)]],
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.hide();
     setTimeout(() => {
       this.loading = false;
     }, 1000)
@@ -52,13 +54,13 @@ export class LoginComponent implements OnInit {
       if (this.validarEmail(usuario.usuario) && this.validarContraseña(usuario.contraseña)) {
      //   this.api.Login(usuario.usuario, usuario.contraseña).subscribe((data: any) => {
           this.afAuth.signInWithEmailAndPassword(usuario.usuario, usuario.contraseña).then(res => {
+            this.service.show();
             localStorage.setItem('tokenAlkemy', environment.keyApi);
             localStorage.setItem('sesionUsuario', usuario.usuario);
             this.api.sesionActiva();
             this.loading = true;
             setTimeout(() => {
               this.router.navigate(['/home']).then(() => {
-                window.location.reload();
               });
             }, 1500)
         },error=>{

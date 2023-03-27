@@ -12,7 +12,7 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h6 class="offcanvas-title" [hidden]="!auth" id="offcanvasNavbarLabel">{{usuarioLogin}}</h6>
+                <h6 class="offcanvas-title" *ngIf="auth | async" id="offcanvasNavbarLabel">{{usuarioLogin}}</h6>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
@@ -26,7 +26,7 @@
                         <a class="nav-link" routerLink="/platos" data-bs-dismiss="offcanvas">Buscar Platos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [hidden]="!auth" data-bs-dismiss="offcanvas" (click)="cerrarSesion()">Cerrar
+                        <a *ngIf="auth | async" class="nav-link" data-bs-dismiss="offcanvas" (click)="cerrarSesion()">Cerrar
                             Sesión</a>
                     </li>
                 </ul>
