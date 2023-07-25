@@ -2,7 +2,7 @@
 
 Proyecto desarrollado con ANGULAR.
 
-Puede acceder al proyecto desde el siguiente [link](https://alacarta-angular.web.app/).
+Puede acceder al proyecto desde el siguiente [link](https://ecommerce-angular-material.web.app/).
 
 **PASOS PARA CLONAR REPOSITORIO**
 - git clone https://github.com/chrisdresba/Challenge-Angular.git
