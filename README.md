@@ -48,6 +48,6 @@ Puede acceder al proyecto desde el siguiente [link](https://alacarta-angular.web
 
 **Home - Detalles**  
 
-*Aquí podremos ver los detalles del plato seleccionado * 
+*Aquí podremos ver los detalles del plato seleccionado  * 
 
 ![](https://github.com/chrisdresba/Challenge-Angular/blob/main/Challenge-Angular/AppImg/detalles.png?raw=true)
